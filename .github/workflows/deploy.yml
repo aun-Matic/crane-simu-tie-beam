@@ -26,6 +26,8 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+      # SPA: ให้ลิงก์ตรง /app-1, /app-2, /help เปิดได้ (Pages ส่ง 404.html สำหรับ path ที่ไม่มีไฟล์)
+      - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
